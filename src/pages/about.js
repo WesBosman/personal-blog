@@ -1,18 +1,26 @@
 import React from "react"
-import { Row, Container } from "react-bootstrap"
+import Layout from "../components/layout"
 import Header from "../components/header"
+import Hero from "../components/hero"
+import Avatar from "../components/avatar"
+import Footer from "../components/footer"
+import { Container } from "react-bootstrap"
 
 export default () => (
-  <Row>
-    <Container fluid="true">
-      <link
-        rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous"
-      />
-      <Header />
-      <p>This is the about me section.</p>
+  <Layout>
+    <Header />
+    <Hero />
+    <Container className="content" fluid="true">
+      <div className="text">
+        <h1>About Me</h1>
+        <p>
+          My name is Wesley Bosman and I am a professional Web Developer. When I
+          am not writing code I spend time surfing, snowboarding, drinking craft
+          beer and creating art.
+        </p>
+      </div>
+      <Avatar />
     </Container>
-  </Row>
+    <Footer />
+  </Layout>
 )

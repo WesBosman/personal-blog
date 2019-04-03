@@ -1,5 +1,4 @@
 import React from "react"
-import { Navbar, Nav } from "react-bootstrap"
 import FontAwesome from "react-fontawesome"
 
 class Header extends React.Component {
@@ -10,6 +9,7 @@ class Header extends React.Component {
           <div className="name">Wesley Bosman</div>
           <div className="links">
             <a href="/">Home</a>
+            <a href="/gallery">Gallery</a>
             <a href="/about">About</a>
             <a href="https://github.com/WesBosman">
               <FontAwesome name="github" size="2x" />
