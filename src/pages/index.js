@@ -40,16 +40,6 @@ export default function({ data }) {
   )
 }
 
-// export const titleQuery = graphql`
-//   query {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//   }
-// `
-
 export const imgQuery = graphql`
   query {
     inTheSurf: file(relativePath: { eq: "in-the-surf.JPG" }) {

@@ -5,7 +5,7 @@
 @import "mixins";
 
 // Import from slick carousel
-@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
 // The rest of the sass for the site
@@ -104,13 +104,13 @@ nav {
   position: absolute;
   color: $green;
   top: 0px;
-  left: 0px;
   height: 400px;
   width: 100%;
+  text-align: center;
   font-size: 45px;
   z-index: 4;
   font-family: $rock-salt;
-  transform: translate(40%, 45%);
+  transform: translate(0%, 45%);
   // background: url("../images/richmond.JPG");
   background-blend-mode: color-burn;
 
@@ -181,25 +181,25 @@ nav {
 //   flex: auto;
 //   height: auto;
 //   max-height: 500px;
-  // min-width: 150px;
-  // max-width: 500px;
-  // width: auto;
-  // margin: 0px 8px 8px 0px;
-  // object-fit: contain;
-  // object-position: center;
+// min-width: 150px;
+// max-width: 500px;
+// width: auto;
+// margin: 0px 8px 8px 0px;
+// object-fit: contain;
+// object-position: center;
 
-  // &:nth-child(4n + 4) {
-  //   width: 325px;
-  // }
-  // &:nth-child(4n + 2):nth-child(4n + 2) {
-  //   width: 325px;
-  // }
-  // &:nth-child(4n + 3):nth-child(4n + 3) {
-  //   width: 180px;
-  // }
-  // &:nth-child(4n + 4):nth-child(4n + 4) {
-  //   width: 380px;
-  // }
+// &:nth-child(4n + 4) {
+//   width: 325px;
+// }
+// &:nth-child(4n + 2):nth-child(4n + 2) {
+//   width: 325px;
+// }
+// &:nth-child(4n + 3):nth-child(4n + 3) {
+//   width: 180px;
+// }
+// &:nth-child(4n + 4):nth-child(4n + 4) {
+//   width: 380px;
+// }
 // }
 .avatar {
   border-radius: 50%;
@@ -221,7 +221,6 @@ nav {
     display: flex;
     flex-direction: column;
     max-width: 400px;
-
 
     h2 {
       border-bottom: 1px solid $green;

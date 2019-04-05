@@ -8,48 +8,49 @@ import Slider from "react-slick"
 import { Container } from "react-bootstrap"
 import { graphql } from "gatsby"
 
-export default function ({data}) {
-    const galleryPhotos = data.galleryPhotos.edges;
-    const settings = {
-      customPaging: function(index) {
-        let img = galleryPhotos[index]
-        return (
-          <a href="#">
-            <Img 
-              key={index}
-              sizes={img.node.childImageSharp.sizes} 
-            />
-          </a>
-        );
-      },
-      dots: true,
-      dotsClass: "slick-dots slick-thumb",
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      centerMode: true,
-      adaptiveHeight: true,
-      fade: true,
-    };
-    return (
-      <Layout>
-        <Header />
-        <Hero title="Gallery" />
-        <Container className="gallery" fluid={true}>
-          <Slider {...settings}>
-            {galleryPhotos.map(function(element, index){
-              return(
-                <div className="gallery-item-div">
-                  <Img className="gallery-item" title="title" alt="alt" key={index} sizes={element.node.childImageSharp.sizes} />
-                </div>
-              )
-            })}
-          </Slider>
-        </Container>
-        <Footer />
-      </Layout>
-    )
+export default function({ data }) {
+  const galleryPhotos = data.galleryPhotos.edges
+  const settings = {
+    customPaging: function(index) {
+      let img = galleryPhotos[index]
+      return (
+        <a href="#">
+          <Img key={index} sizes={img.node.childImageSharp.sizes} />
+        </a>
+      )
+    },
+    dots: true,
+    dotsClass: "slick-dots slick-thumb",
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+  }
+  return (
+    <Layout>
+      <Header />
+      <Hero title="Gallery" />
+      <Container className="gallery" fluid={true}>
+        <Slider {...settings}>
+          {galleryPhotos.map(function(element, index) {
+            return (
+              <div className="gallery-item-div">
+                <Img
+                  className="gallery-item"
+                  title="title"
+                  alt="alt"
+                  key={index}
+                  sizes={element.node.childImageSharp.sizes}
+                />
+              </div>
+            )
+          })}
+        </Slider>
+      </Container>
+      <Footer />
+    </Layout>
+  )
 }
 
 export const galleryQuery = graphql`
