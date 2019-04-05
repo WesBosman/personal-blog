@@ -1,62 +1,74 @@
-import React from "react"
+import React, { Component } from "react"
 import Layout from "../components/layout"
 import Header from "../components/header"
 import Hero from "../components/hero"
 import Footer from "../components/footer"
 import Img from "gatsby-image"
+import Slider from "react-slick"
 import { Container } from "react-bootstrap"
 import { StaticQuery, graphql } from "gatsby"
 
-class Gallery extends React.Component {
-  render() {
+export default function ({data}) {
+    const galleryPhotos = data.galleryPhotos.edges;
+    const settings = {
+      customPaging: function(index) {
+        let img = galleryPhotos[index]
+        return (
+          <a>
+            <Img 
+              key={index}
+              sizes={img.node.childImageSharp.sizes} 
+            />
+          </a>
+        );
+      },
+      dots: true,
+      dotsClass: "slick-dots slick-thumb",
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      adaptiveHeight: true
+    };
     return (
-      <StaticQuery
-        query={graphql`
-          query {
-            galleryPhotos: allFile(
-              filter: {
-                extension: { regex: "/(jpeg|jpg|gif|png|JPG)/" }
-                relativeDirectory: { eq: "gallery" }
-              }
-            ) {
-              edges {
-                node {
-                  childImageSharp {
-                    sizes(maxWidth: 380) {
-                      ...GatsbyImageSharpSizes
-                    }
-                  }
-                }
-              }
-            }
-          }
-        `}
-        render={function(data) {
-          //   console.log("Data: ", data)
-          return (
-            <Layout>
-              <Header />
-              <Hero />
-              <Container className="gallery" fluid={true}>
-                {data.galleryPhotos.edges.map(function(element, index) {
-                  return (
-                    <Img
-                      className="gallery-item"
-                      title="title"
-                      alt="alt"
-                      key={index}
-                      sizes={element.node.childImageSharp.sizes}
-                    />
-                  )
-                })}
-              </Container>
-              <Footer />
-            </Layout>
-          )
-        }}
-      />
+      <Layout>
+        <Header />
+        <Hero title="Gallery" />
+        <Container className="gallery" fluid={true}>
+        <Slider {...settings}>
+          {galleryPhotos.map(function(element, index){
+            return(
+              <div className="gallery-item-div">
+                <Img className="gallery-item" title="title" alt="alt" key={index} sizes={element.node.childImageSharp.sizes} />
+              </div>
+            )
+          })}
+        </Slider>
+        </Container>
+        <Footer />
+      </Layout>
     )
-  }
 }
 
-export default Gallery
+// export default Gallery
+
+export const galleryQuery = graphql`
+  query {
+    galleryPhotos: allFile(
+      filter: {
+        extension: { regex: "/(jpeg|jpg|gif|png|JPG)/" }
+        relativeDirectory: { eq: "gallery" }
+      }
+    ) {
+      edges {
+        node {
+          childImageSharp {
+            sizes(maxWidth: 300) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
+      }
+    }
+  }
+`

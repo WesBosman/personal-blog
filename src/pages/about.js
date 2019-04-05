@@ -9,7 +9,7 @@ import { Container } from "react-bootstrap"
 export default () => (
   <Layout>
     <Header />
-    <Hero />
+    <Hero title="About" />
     <Container className="content" fluid="true">
       <div className="text">
         <h1>About Me</h1>

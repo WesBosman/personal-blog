@@ -21,6 +21,8 @@ export default ({ children }) => (
         rel="stylesheet"
       />
     </Helmet>
-    <Container fluid="true">{children}</Container>
+    <Container className="app" fluid="true">
+      {children}
+    </Container>
   </Row>
 )

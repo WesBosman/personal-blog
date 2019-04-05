@@ -1,19 +1,27 @@
 import React from "react"
-import Colors from "../constants/colors"
+import Img from "gatsby-image"
 import { Row, Container } from "react-bootstrap"
 
-const contentStyle = {
-  backgroundColor: Colors.lightGray,
-  margin: "3rem auto",
-  maxWidth: "960px",
-  height: "100%",
+class Content extends React.Component {
+  render(){
+    console.log("Class: ", this.props.class);
+    const containerClass = `content ${this.props.class}`;
+    return(
+      <Row>
+        <Container className={containerClass} fluid="true">
+          <div className="text">
+            <h2>{this.props.title}</h2>
+            <p>{this.props.text}</p>
+          </div>
+          <Img
+            title={this.props.imageTitle}
+            alt={this.props.imageAlt}
+            fluid={this.props.imageFluid}
+          />
+        </Container>
+      </Row>
+    );
+  }
 }
 
-export default () => (
-  <Row>
-    <Container style={contentStyle} fluid="true">
-      <h1>This is a header</h1>
-      <p>This is an example paragraph.</p>
-    </Container>
-  </Row>
-)
+export default Content

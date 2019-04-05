@@ -4,6 +4,10 @@
 // Import Mixins
 @import "mixins";
 
+// Import from slick carousel
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
 // The rest of the sass for the site
 html {
   font-family: $lato;
@@ -19,7 +23,7 @@ nav {
     background-color: $dark;
     align-items: center;
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     opacity: 0.5;
     width: 100%;
     height: 50px;
@@ -78,6 +82,100 @@ nav {
     }
   }
 }
+.overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 400px;
+  width: 100%;
+  background-color: $dark-blue;
+  opacity: 0.25;
+  z-index: 2;
+
+  @include tablet {
+    height: 300px;
+  }
+
+  @include phone {
+    height: 250px;
+  }
+}
+.hero-title {
+  position: absolute;
+  color: $green;
+  top: 0px;
+  left: 0px;
+  height: 400px;
+  width: 100%;
+  font-size: 45px;
+  z-index: 4;
+  font-family: $rock-salt;
+  transform: translate(40%, 45%);
+  // background: url("../images/richmond.JPG");
+  background-blend-mode: color-burn;
+
+  @include tablet {
+    height: 300px;
+  }
+
+  @include phone {
+    height: 250px;
+  }
+}
+.slick-slider {
+  max-width: $max-width;
+
+  .slick-dots {
+    background-color: $green;
+  }
+}
+.gallery {
+  max-width: $max-width;
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -8px;
+  width: 100%;
+  height: 500px;
+  justify-content: center;
+  background-color: $light-gray;
+}
+.gallery-item-div {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+
+  .gallery-item {
+    height: auto;
+    width: 300px;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+// .gallery-item {
+//   flex: auto;
+//   height: auto;
+//   max-height: 500px;
+  // min-width: 150px;
+  // max-width: 500px;
+  // width: auto;
+  // margin: 0px 8px 8px 0px;
+  // object-fit: contain;
+  // object-position: center;
+
+  // &:nth-child(4n + 4) {
+  //   width: 325px;
+  // }
+  // &:nth-child(4n + 2):nth-child(4n + 2) {
+  //   width: 325px;
+  // }
+  // &:nth-child(4n + 3):nth-child(4n + 3) {
+  //   width: 180px;
+  // }
+  // &:nth-child(4n + 4):nth-child(4n + 4) {
+  //   width: 380px;
+  // }
+// }
 .avatar {
   border-radius: 50%;
   border: 4px solid $green;
@@ -91,15 +189,31 @@ nav {
   margin: 3rem auto;
   max-width: $max-width;
   padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   .text {
     display: flex;
     flex-direction: column;
-    max-width: 50%;
+    max-width: 400px;
 
-    h1 {
+
+    h2 {
       border-bottom: 1px solid $green;
     }
+  }
+
+  .gatsby-image-wrapper {
+    width: 500px;
+    height: auto;
+  }
+
+  &.r {
+    flex-direction: row;
+  }
+
+  &.r-reverse {
+    flex-direction: row-reverse;
   }
 }
 h1,
@@ -121,35 +235,4 @@ footer {
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
-}
-.gallery {
-  max-width: $max-width;
-  display: flex;
-  flex-flow: row wrap;
-  // flex-wrap: wrap;
-  // justify-content: space-around;
-  // align-items: center;
-  margin-left: -8px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 100%;
-}
-.gallery-item {
-  flex: auto;
-  height: 250px;
-  min-width: 150px;
-  margin: 0px 8px 8px 0px;
-
-  &:nth-child(4n + 1) {
-    width: 250px;
-  }
-  &:nth-child(4n + 2):nth-child(4n + 2) {
-    width: 325px;
-  }
-  &:nth-child(4n + 3):nth-child(4n + 3) {
-    width: 180px;
-  }
-  &:nth-child(4n + 4):nth-child(4n + 4) {
-    width: 380px;
-  }
 }

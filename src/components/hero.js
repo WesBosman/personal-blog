@@ -18,12 +18,16 @@ class Hero extends React.Component {
           }
         `}
         render={data => (
-          <Img
-            className="hero"
-            title="Richmond"
-            alt="Richmond Skyline"
-            fluid={data.headerImg.childImageSharp.fluid}
-          />
+          <>
+            <Img
+              className="hero"
+              title="Richmond"
+              alt="Richmond Skyline"
+              fluid={data.headerImg.childImageSharp.fluid}
+            />
+            <div className="overlay" />
+            <div className="hero-title">{this.props.title}</div>
+          </>
         )}
       />
     )

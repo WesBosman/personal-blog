@@ -30,7 +30,9 @@
     "react-dom": "^16.8.5",
     "react-fontawesome": "^1.6.1",
     "react-helmet": "^5.2.0",
+    "react-slick": "^0.23.2",
     "react-typography": "^0.16.19",
+    "slick-carousel": "^1.8.1",
     "typography": "^0.16.19",
     "typography-theme-fairy-gates": "^0.16.19"
   },
