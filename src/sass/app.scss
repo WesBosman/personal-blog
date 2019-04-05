@@ -124,9 +124,29 @@ nav {
 }
 .slick-slider {
   max-width: $max-width;
+  .slick-arrow {
+    &.slick-prev {
+      left: 25px;
 
+      &::before {
+        font-size: 30px;
+        color: $dark-green;
+      }
+    }
+    &.slick-next {
+      right: 25px;
+
+      &::before {
+        font-size: 30px;
+        color: $dark-green;
+      }
+    }
+  }
   .slick-dots {
     background-color: $green;
+    bottom: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 }
 .gallery {
@@ -138,17 +158,22 @@ nav {
   height: 500px;
   justify-content: center;
   background-color: $light-gray;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px solid $green;
+  border-radius: 5px;
 }
 .gallery-item-div {
   display: flex !important;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: 450px;
 
   .gallery-item {
     height: auto;
     width: 300px;
-    object-fit: contain;
+    max-height: 450px;
+    object-fit: fill;
     object-position: center;
   }
 }

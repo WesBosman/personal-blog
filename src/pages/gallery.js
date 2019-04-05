@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import Header from "../components/header"
 import Hero from "../components/hero"
@@ -6,7 +6,7 @@ import Footer from "../components/footer"
 import Img from "gatsby-image"
 import Slider from "react-slick"
 import { Container } from "react-bootstrap"
-import { StaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 export default function ({data}) {
     const galleryPhotos = data.galleryPhotos.edges;
@@ -14,7 +14,7 @@ export default function ({data}) {
       customPaging: function(index) {
         let img = galleryPhotos[index]
         return (
-          <a>
+          <a href="#">
             <Img 
               key={index}
               sizes={img.node.childImageSharp.sizes} 
@@ -28,29 +28,29 @@ export default function ({data}) {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      adaptiveHeight: true
+      centerMode: true,
+      adaptiveHeight: true,
+      fade: true,
     };
     return (
       <Layout>
         <Header />
         <Hero title="Gallery" />
         <Container className="gallery" fluid={true}>
-        <Slider {...settings}>
-          {galleryPhotos.map(function(element, index){
-            return(
-              <div className="gallery-item-div">
-                <Img className="gallery-item" title="title" alt="alt" key={index} sizes={element.node.childImageSharp.sizes} />
-              </div>
-            )
-          })}
-        </Slider>
+          <Slider {...settings}>
+            {galleryPhotos.map(function(element, index){
+              return(
+                <div className="gallery-item-div">
+                  <Img className="gallery-item" title="title" alt="alt" key={index} sizes={element.node.childImageSharp.sizes} />
+                </div>
+              )
+            })}
+          </Slider>
         </Container>
         <Footer />
       </Layout>
     )
 }
-
-// export default Gallery
 
 export const galleryQuery = graphql`
   query {
