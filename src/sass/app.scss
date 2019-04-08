@@ -36,6 +36,13 @@ nav {
       align-items: center;
       margin-left: auto;
       margin-right: auto;
+      background-color: lightsalmon;
+
+      @include tablet {
+      }
+
+      @include phone {
+      }
 
       > div {
         color: $white;
@@ -43,18 +50,122 @@ nav {
         &.name {
           font-family: $rock-salt;
           font-size: 22px;
+
+          @include tablet {
+            justify-content: space-around;
+            align-self: center;
+            padding-left: 20px;
+            background-color: blue;
+          }
+
+          @include phone {
+            justify-content: center;
+            align-self: center;
+            width: 100%;
+            padding-left: 20px;
+            background-color: blue;
+          }
         }
-        &.links {
-          width: 25%;
+        &.menu-links {
           display: flex;
-          align-items: center;
-          justify-content: space-around;
+          flex-direction: row;
+
+          @include desktop {
+            width: 50%;
+          }
+
+          @include tablet {
+            position: absolute;
+            top: 10px;
+            right: 0px;
+            width: 50%;
+            flex-direction: column-reverse;
+          }
+
+          @include phone {
+            position: absolute;
+            top: 10px;
+            right: 0px;
+            width: 50%;
+            flex-direction: column-reverse;
+          }
+
+          > div {
+            @include tablet {
+              flex-direction: column-reverse;
+            }
+
+            @include phone {
+              flex-direction: column-reverse;
+            }
+
+            &.links {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+
+              @include tablet {
+                width: 100%;
+                flex-direction: column;
+                background-color: red;
+              }
+
+              @include phone {
+                width: 100%;
+                flex-direction: column;
+                background-color: red;
+              }
+
+              &.inactive {
+                display: none;
+              }
+
+              &.active {
+                display: flex;
+              }
+
+              > a {
+                background-color: gold;
+                width: 100%;
+                text-align: center;
+
+                &:hover {
+                  background-color: rebeccapurple;
+                }
+              }
+            }
+
+            &.menu {
+              width: 100%;
+
+              @include desktop {
+                display: none;
+              }
+
+              @include tablet {
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                padding-right: 20px;
+                background-color: yellow;
+              }
+
+              @include phone {
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                padding-right: 20px;
+                background-color: yellow;
+              }
+            }
+          }
         }
       }
 
       a {
         color: $white;
-        text-shadow: 2px 2px #000;
+        text-shadow: 1px 1px $dark;
         background-image: none;
         text-decoration: none;
 
@@ -127,6 +238,7 @@ nav {
   .slick-arrow {
     &.slick-prev {
       left: 25px;
+      z-index: 1;
 
       &::before {
         font-size: 30px;
