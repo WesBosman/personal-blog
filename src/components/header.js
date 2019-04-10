@@ -34,7 +34,7 @@ class Header extends React.Component {
               <a href="/">Home</a>
               <a href="/gallery">Gallery</a>
               <a href="/about">About</a>
-              <a href="https://github.com/WesBosman">
+              <a href="https://github.com/WesBosman" className="icon-link">
                 <FontAwesome name="github" size="2x" />
               </a>
             </div>
