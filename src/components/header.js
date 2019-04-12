@@ -31,6 +31,7 @@ class Header extends React.Component {
           </div>
           <div className="menu-links">
             <div className={activeClass}>
+              <div class="arrow-down gray" />
               <a href="/">Home</a>
               <a href="/gallery">Gallery</a>
               <a href="/about">About</a>

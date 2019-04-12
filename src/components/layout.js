@@ -5,7 +5,7 @@ import "../styles/font-awesome.min.css"
 import "../sass/app.scss"
 
 export default ({ children }) => (
-  <Row>
+  <Container id="app">
     <Helmet>
       <meta charSet="utf-8" />
       <title>Wes Bosman | Home</title>
@@ -21,8 +21,6 @@ export default ({ children }) => (
         rel="stylesheet"
       />
     </Helmet>
-    <Container className="app" fluid="true">
-      {children}
-    </Container>
-  </Row>
+    <div>{children}</div>
+  </Container>
 )
