@@ -111,6 +111,10 @@ nav {
               justify-content: space-around;
 
               &.inactive {
+                > a {
+                  background-color: transparent;
+                }
+
                 .arrow-down {
                   display: none;
                 }
