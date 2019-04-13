@@ -5,7 +5,7 @@ import "../styles/font-awesome.min.css"
 import "../sass/app.scss"
 
 export default ({ children }) => (
-  <Container id="app">
+  <div id="app">
     <Helmet>
       <meta charSet="utf-8" />
       <title>Wes Bosman | Home</title>
@@ -22,5 +22,5 @@ export default ({ children }) => (
       />
     </Helmet>
     <div>{children}</div>
-  </Container>
+  </div>
 )

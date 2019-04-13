@@ -10,7 +10,7 @@ export default () => (
   <Layout>
     <Header />
     <Hero title="About" />
-    <Container className="content" fluid="true">
+    <Container className="content about-me" fluid="true">
       <div className="text">
         <h1>About Me</h1>
         <p>
