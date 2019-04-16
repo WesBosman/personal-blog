@@ -1,10 +1,9 @@
 import React from "react"
 import Img from "gatsby-image"
-import { Row, Container } from "react-bootstrap"
+import { Container } from "react-bootstrap"
 
 class Content extends React.Component {
   render() {
-    console.log("Class: ", this.props.class)
     const containerClass = `content ${this.props.class}`
     return (
       <Container className={containerClass} fluid="true">

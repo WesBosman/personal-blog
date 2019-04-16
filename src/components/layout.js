@@ -1,5 +1,4 @@
 import React from "react"
-import { Row, Container } from "react-bootstrap"
 import { Helmet } from "react-helmet"
 import "../styles/font-awesome.min.css"
 import "../sass/app.scss"
