@@ -332,6 +332,8 @@ nav {
   border: 2px solid $green;
 
   &.container-fluid {
+    margin: auto;
+    margin-top: 20px;
     padding-left: 0px;
     padding-right: 0px;
   }
