@@ -7,16 +7,19 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-react-helmet`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
+        name: `Wes Bosman`,
+        short_name: `Wes Bosman`,
         start_url: `/`,
-        icon: `src/images/icon.png`,
-        // name: 'Wes Bosman',
-        // short_name: 'Wes Bosman',
-        // background_color: '#663399',
-        // theme_color: '#663399',
-        // display: 'minimal-ui',
+        background_color: `#226597`,
+        theme_color: `#87C0CD`,
+        icon: "src/images/web_icon.png",
+        display: `standalone`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-react-helmet`,
     },
     {
       resolve: `gatsby-source-filesystem`,

@@ -6,33 +6,33 @@ import Content from "../components/content"
 import Footer from "../components/footer"
 
 export default function({ data }) {
-  console.log("Data: ", data)
+  // console.log("Data: ", data)
   return (
     <Layout>
       <Header />
       <Hero title="" />
       <Content
         class="r"
-        title="Introductions" 
-        text="I'm Wes Bosman. I live in Richmond Virginia but I'm originally Virginia's Eastern Shore. I spend most of my time developing websites at VSP Technologies. The purpose of my personal website is to display my art as well as blog about code that I write at work." 
-        imageTitle="In the surf" 
-        imageAlt="In the surf" 
+        title="Introductions"
+        text="I'm Wes Bosman. I live in Richmond Virginia but I'm originally Virginia's Eastern Shore. I spend most of my time developing websites at VSP Technologies. The purpose of my personal website is to display my art as well as blog about code that I write at work."
+        imageTitle="In the surf"
+        imageAlt="In the surf"
         imageFluid={data.mallards.childImageSharp.fluid}
       />
-      <Content 
+      <Content
         class="r-reverse"
-        title="The Great Outdoors" 
-        text="I spend most of my time on a computer writing code. That doesn't mean that I don't also love to be outdoors." 
-        imageTitle="In the surf" 
-        imageAlt="In the surf" 
+        title="The Great Outdoors"
+        text="I spend most of my time on a computer writing code. That doesn't mean that I don't also love to be outdoors."
+        imageTitle="In the surf"
+        imageAlt="In the surf"
         imageFluid={data.inTheSurf.childImageSharp.fluid}
       />
-      <Content 
+      <Content
         class="r"
-        title="Dog Friendly" 
-        text="This is my dog Sam. She is a great saltwater adventure companion." 
-        imageTitle="Sam" 
-        imageAlt="Sam" 
+        title="Dog Friendly"
+        text="This is my dog Sam. She is a great saltwater adventure companion."
+        imageTitle="Sam"
+        imageAlt="Sam"
         imageFluid={data.sam.childImageSharp.fluid}
       />
       <Footer />

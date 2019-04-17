@@ -12,7 +12,6 @@ class Header extends React.Component {
     this.menuClicked = this.menuClicked.bind(this)
   }
   menuClicked() {
-    console.log("Menu has been clicked")
     const active = this.state.menuActive
 
     this.setState({
@@ -22,6 +21,9 @@ class Header extends React.Component {
   render() {
     let active = this.state.menuActive
     let activeClass = active ? "links active" : "links inactive"
+    let bars = <FontAwesome name="bars" size="2x" />
+    let close = <FontAwesome name="times" size="2x" />
+    let icon = active ? close : bars
 
     return (
       <nav className="header-nav">
@@ -31,7 +33,7 @@ class Header extends React.Component {
           </div>
           <div className="menu-links">
             <div className={activeClass}>
-              <div class="arrow-down gray" />
+              {/* <div className="arrow-down gray" /> */}
               <a href="/">Home</a>
               <a href="/gallery">Gallery</a>
               <a href="/about">About</a>
@@ -40,7 +42,7 @@ class Header extends React.Component {
               </a>
             </div>
             <div className="menu" onClick={this.menuClicked}>
-              <FontAwesome name="bars" size="2x" />
+              {icon}
             </div>
           </div>
         </div>
