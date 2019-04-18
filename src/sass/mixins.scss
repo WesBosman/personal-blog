@@ -54,6 +54,51 @@ $desktop-width: 1024px;
   transform: rotate($degrees);
 }
 
+// @-webkit-keyframes slideOut {
+//   0% {
+//     transform: translateX(0px);
+//   }
+//   100% {
+//     transform: translateX(200px);
+//   }
+// }
+// @-moz-keyframes slideOut {
+//   0% {
+//     transform: translateX(0px);
+//   }
+//   100% {
+//     transform: translateX(200px);
+//   }
+// }
+// @-o-keyframes slideOut {
+//   0% {
+//     transform: translateX(0px);
+//   }
+//   100% {
+//     transform: translateX(200px);
+//   }
+// }
+@keyframes slideIn {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+$slide-in: slideIn 0.35s ease-in;
+$slide-out: slideOut 0.35s ease-in;
+
 // Magic parallax mixins
 @mixin parallax-init($perspective: null, $element: null, $parallax-ios: null) {
   $perspective: if(

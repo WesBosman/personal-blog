@@ -1,5 +1,7 @@
 import React from "react"
 import FontAwesome from "react-fontawesome"
+import MenuIcon from "./menuicon"
+import { Motion, spring } from "react-motion"
 
 class Header extends React.Component {
   constructor(props) {
@@ -21,9 +23,8 @@ class Header extends React.Component {
   render() {
     let active = this.state.menuActive
     let activeClass = active ? "links active" : "links inactive"
-    let bars = <FontAwesome name="bars" size="2x" />
-    let close = <FontAwesome name="times" size="2x" />
-    let icon = active ? close : bars
+    let animateMenuOut = active ? 0 : 200
+    let animateMenuIn = active ? 200 : 0
 
     return (
       <nav className="header-nav">
@@ -33,7 +34,6 @@ class Header extends React.Component {
           </div>
           <div className="menu-links">
             <div className={activeClass}>
-              {/* <div className="arrow-down gray" /> */}
               <a href="/">Home</a>
               <a href="/gallery">Gallery</a>
               <a href="/about">About</a>
@@ -42,7 +42,26 @@ class Header extends React.Component {
               </a>
             </div>
             <div className="menu" onClick={this.menuClicked}>
-              {icon}
+              <Motion
+                defaultStyle={{
+                  opacity: 0.75,
+                  rotate: 0,
+                }}
+                style={{
+                  opacity: spring(active ? 0.75 : 1.0),
+                  rotate: spring(active ? 90 : 0),
+                }}
+              >
+                {style => (
+                  <MenuIcon
+                    style={{
+                      opacity: style.opacity,
+                      transform: `rotate(${style.rotate}deg)`,
+                    }}
+                    active={active}
+                  />
+                )}
+              </Motion>
             </div>
           </div>
         </div>

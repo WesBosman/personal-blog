@@ -111,19 +111,15 @@ nav {
               justify-content: space-around;
 
               &.inactive {
+                // animation: $slide-out;
+
                 > a {
                   background-color: transparent;
-                }
-
-                .arrow-down {
-                  display: none;
                 }
               }
 
               &.active {
-                .arrow-down {
-                  display: block;
-                }
+                animation: $slide-out;
               }
 
               @include tablet {
