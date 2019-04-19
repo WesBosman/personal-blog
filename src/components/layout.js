@@ -20,6 +20,9 @@ export default ({ children }) => (
         rel="stylesheet"
       />
     </Helmet>
-    <div>{children}</div>
+    <div>
+      <div className="app-overlay" />
+      {children}
+    </div>
   </div>
 )

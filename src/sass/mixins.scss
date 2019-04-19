@@ -54,50 +54,87 @@ $desktop-width: 1024px;
   transform: rotate($degrees);
 }
 
-// @-webkit-keyframes slideOut {
-//   0% {
-//     transform: translateX(0px);
-//   }
-//   100% {
-//     transform: translateX(200px);
-//   }
-// }
-// @-moz-keyframes slideOut {
-//   0% {
-//     transform: translateX(0px);
-//   }
-//   100% {
-//     transform: translateX(200px);
-//   }
-// }
-// @-o-keyframes slideOut {
-//   0% {
-//     transform: translateX(0px);
-//   }
-//   100% {
-//     transform: translateX(200px);
-//   }
-// }
-@keyframes slideIn {
-  0% {
-    transform: translateX(0%);
+@mixin animateTransform($name, $from, $to) {
+  @-webkit-keyframes #{$name} {
+    from {
+      transform: translateX(#{$to});
+    }
+    to {
+      transform: translateX(#{$from});
+    }
   }
-  100% {
-    transform: translateX(100%);
+  @-moz-keyframes #{$name} {
+    from {
+      transform: translateX(#{$to});
+    }
+    to {
+      transform: translateX(#{$from});
+    }
   }
-}
-
-@keyframes slideOut {
-  0% {
-    transform: translateX(100%);
+  @-ms-keyframes #{$name} {
+    from {
+      transform: translateX(#{$to});
+    }
+    to {
+      transform: translateX(#{$from});
+    }
   }
-  100% {
-    transform: translateX(0%);
+  @keyframes #{$name} {
+    from {
+      transform: translateX(#{$to});
+    }
+    to {
+      transform: translateX(#{$from});
+    }
   }
 }
 
-$slide-in: slideIn 0.35s ease-in;
-$slide-out: slideOut 0.35s ease-in;
+@mixin animateOpacity($name, $from, $to) {
+  @-webkit-keyframes #{$name} {
+    from {
+      opacity: #{$to};
+    }
+    to {
+      opacity: #{$from};
+    }
+  }
+  @-moz-keyframes #{$name} {
+    from {
+      opacity: #{$to};
+    }
+    to {
+      opacity: #{$from};
+    }
+  }
+  @-ms-keyframes #{$name} {
+    from {
+      opacity: #{$to};
+    }
+    to {
+      opacity: #{$from};
+    }
+  }
+  @keyframes #{$name} {
+    from {
+      opacity: #{$to};
+    }
+    to {
+      opacity: #{$from};
+    }
+  }
+}
+
+@include animateTransform("slideIn", 0%, 150%);
+@include animateTransform("slideOut", 100%, 0%);
+
+@include animateOpacity("fadeIn", 0, 1);
+@include animateOpacity("fadeOut", 1, 0);
+
+$fade-in: fadeIn 0.25s linear forwards;
+$fade-out: fadeOut 0.25s linear forwards;
+
+$slide-in: slideIn 0.35s ease-out forwards;
+$slide-out: slideOut 0.35s ease-in forwards;
 
 // Magic parallax mixins
 @mixin parallax-init($perspective: null, $element: null, $parallax-ios: null) {
