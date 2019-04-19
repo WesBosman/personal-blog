@@ -13,21 +13,16 @@ export default function({ data }) {
       <Content
         class="r"
         title="Introductions"
-        text="I'm Wes Bosman. I live in Richmond Virginia but I'm originally Virginia's Eastern Shore. I spend most of my time developing websites at VSP Technologies. The purpose of my personal website is to display my art as well as blog about code that I write at work."
-        imageTitle="In the surf"
-        imageAlt="In the surf"
-        imageFluid={data.mallards.childImageSharp.fluid}
-      />
-      <Content
-        class="r-reverse"
-        title="The Great Outdoors"
-        text="I spend most of my time on a computer writing code. That doesn't mean that I don't also love to be outdoors."
+        text={`I'm Wes Bosman. I live in Richmond Virginia, \
+        but I'm originally Virginia's Eastern Shore. I spend most of my time \
+        developing websites at VSP Technologies. The purpose of this website \
+        is to display my art as well as blog about code that I write at work.`}
         imageTitle="In the surf"
         imageAlt="In the surf"
         imageFluid={data.inTheSurf.childImageSharp.fluid}
       />
       <Content
-        class="r"
+        class="r-reverse"
         title="Dog Friendly"
         text="This is my dog Sam. She is a great saltwater adventure companion."
         imageTitle="Sam"

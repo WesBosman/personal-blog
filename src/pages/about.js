@@ -13,10 +13,20 @@ export default () => (
     <Container className="content about-me" fluid="true">
       <div className="text">
         <h1>About Me</h1>
+        {/* <div class="typewriter">
+          <h1>I am Wesley Bosman.</h1>
+        </div> */}
         <p>
-          My name is Wesley Bosman and I am a professional Web Developer. When I
-          am not writing code I spend time surfing, snowboarding, drinking craft
-          beer and creating art.
+          I am Wesley Bosman. I'm a professional Web Developer. A Python
+          enthusiast. A Surfer, Skateboarder and Snowboarder. I enjoy drinking
+          beer and being outdoors.
+        </p>
+        <p>
+          This site was built using Gatsby as an expirment with React and
+          GraphQl. At work I write internal Web Apps using Laravel and PHP. When
+          working on our external website I use Wordpress. If we need a quick
+          script I usually turn to python. In my spare time I experiment with
+          mobile development using iOS or React Native.
         </p>
       </div>
       <Avatar />

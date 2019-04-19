@@ -10,6 +10,8 @@ class Header extends React.Component {
 
     this.state = {
       menuActive: false,
+      linksClass: "links none",
+      overlayClass: "app-overlay none",
     }
 
     this.menuClicked = this.menuClicked.bind(this)
@@ -19,12 +21,12 @@ class Header extends React.Component {
 
     this.setState({
       menuActive: !active,
+      linksClass: `links ${!active ? "active" : "inactive"}`,
+      overlayClass: `app-overlay ${!active ? "active" : "inactive"}`,
     })
   }
   render() {
     let active = this.state.menuActive
-    let activeClass = active ? "links active" : "links inactive"
-    let overlayClass = active ? "app-overlay active" : "app-overlay inactive"
 
     return (
       <>
@@ -34,7 +36,7 @@ class Header extends React.Component {
               <TransitionLink to={"/"}>Wesley Bosman</TransitionLink>
             </div>
             <div className="menu-links">
-              <div className={activeClass}>
+              <div className={this.state.linksClass}>
                 <TransitionLink to={"/"}>Home</TransitionLink>
                 <TransitionLink to={"/gallery"}>Gallery</TransitionLink>
                 <TransitionLink to={"/about"}>About</TransitionLink>
@@ -67,7 +69,7 @@ class Header extends React.Component {
             </div>
           </div>
         </nav>
-        <div className={overlayClass} />
+        <div className={this.state.overlayClass} />
       </>
     )
   }
