@@ -28,7 +28,7 @@ nav {
     background-color: $dark-opacity;
     align-items: center;
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     width: 100%;
     min-width: 300px;
     height: 50px;
@@ -110,14 +110,7 @@ nav {
               align-items: center;
               justify-content: space-around;
               background-color: $dark;
-
-              &.inactive {
-                animation: $slide-out;
-              }
-
-              &.active {
-                animation: $slide-in;
-              }
+              position: relative;
 
               @include tablet {
                 width: 100%;
@@ -132,39 +125,33 @@ nav {
                 height: 100vh;
 
                 &.inactive {
-                  // display: none;
-                  left: 0;
+                  animation: $slide-out;
                 }
 
                 &.active {
-                  display: flex;
-                  justify-content: flex-start;
-                  align-items: flex-start;
-                  position: absolute;
-                  top: 50px;
-                  bottom: 0px;
-                  right: 0px;
-                  height: 100vh;
+                  animation: $slide-in;
                 }
               }
 
               @include phone {
                 width: 100%;
                 flex-direction: column;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                top: 50px;
+                bottom: 0px;
+                right: 0px;
+                left: 0px;
+                height: 100vh;
+                position: absolute;
 
                 &.inactive {
-                  // display: none;
+                  animation: $slide-out;
                 }
 
                 &.active {
-                  display: flex;
-                  justify-content: flex-start;
-                  align-items: flex-start;
-                  position: absolute;
-                  top: 50px;
-                  bottom: 0px;
-                  right: 0px;
-                  height: 100vh;
+                  animation: $slide-in;
                 }
               }
 
@@ -180,10 +167,6 @@ nav {
                   align-items: center;
                   justify-content: center;
                   font-size: 0.75em;
-                }
-
-                &:hover {
-                  // background-color: rebeccapurple;
                 }
               }
             }
@@ -245,18 +228,20 @@ nav {
   }
 }
 .app-overlay {
-  position: absolute;
+  position: fixed;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
+  z-index: 3;
+  background-color: $dark-opacity;
 
-  .active {
-    animation: $fade-in;
+  &.active {
+    animation: $fade-out;
   }
 
-  .inactive {
-    animation: $fade-out;
+  &.inactive {
+    animation: $fade-in;
   }
 }
 .overlay {
@@ -305,9 +290,10 @@ nav {
   width: 100%;
 
   .slick-arrow {
+    z-index: 3;
+
     &.slick-prev {
       left: 25px;
-      z-index: 1;
 
       &::before {
         font-size: 30px;

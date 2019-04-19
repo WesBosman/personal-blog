@@ -6,7 +6,6 @@ import Content from "../components/content"
 import Footer from "../components/footer"
 
 export default function({ data }) {
-  // console.log("Data: ", data)
   return (
     <Layout>
       <Header />

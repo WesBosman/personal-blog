@@ -130,8 +130,8 @@ $desktop-width: 1024px;
 @include animateOpacity("fadeIn", 0, 1);
 @include animateOpacity("fadeOut", 1, 0);
 
-$fade-in: fadeIn 0.25s linear forwards;
-$fade-out: fadeOut 0.25s linear forwards;
+$fade-in: fadeIn 0.45s linear forwards;
+$fade-out: fadeOut 0.45s linear forwards;
 
 $slide-in: slideIn 0.35s ease-out forwards;
 $slide-out: slideOut 0.35s ease-in forwards;

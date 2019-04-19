@@ -22,6 +22,9 @@ module.exports = {
       resolve: `gatsby-plugin-react-helmet`,
     },
     {
+      resolve: `gatsby-plugin-transition-link`,
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/images`,

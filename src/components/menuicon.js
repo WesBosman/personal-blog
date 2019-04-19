@@ -2,9 +2,6 @@ import React from "react"
 import FontAwesome from "react-fontawesome"
 
 class MenuIcon extends React.Component {
-  constructor(props) {
-    super(props)
-  }
   render() {
     let active = this.props.active
     let bars = <FontAwesome style={this.props.style} name="bars" size="2x" />

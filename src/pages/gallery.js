@@ -35,7 +35,7 @@ export default function({ data }) {
         <Slider {...settings}>
           {galleryPhotos.map(function(element, index) {
             return (
-              <div className="gallery-item-div">
+              <div key={index} className="gallery-item-div">
                 <Img
                   className="gallery-item"
                   title="title"
