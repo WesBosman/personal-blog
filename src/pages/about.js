@@ -12,7 +12,7 @@ export default () => (
     <Hero title="About" />
     <Container className="content about-me" fluid="true">
       <div className="text">
-        <h1>About Me</h1>
+        <h1>Me</h1>
         {/* <div class="typewriter">
           <h1>I am Wesley Bosman.</h1>
         </div> */}
@@ -21,6 +21,8 @@ export default () => (
           enthusiast. A Surfer, Skateboarder and Snowboarder. I enjoy drinking
           beer and being outdoors.
         </p>
+        <br />
+        <h2>The Tech</h2>
         <p>
           This site was built using Gatsby as an expirment with React and
           GraphQl. At work I write internal Web Apps using Laravel and PHP. When

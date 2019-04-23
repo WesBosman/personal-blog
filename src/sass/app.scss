@@ -112,8 +112,11 @@ nav {
               background-color: $dark;
               position: relative;
 
-              &.none {
-                display: none;
+              @include desktop {
+                &.none,
+                &.inactive {
+                  background-color: transparent;
+                }
               }
 
               @include tablet {
@@ -127,6 +130,10 @@ nav {
                 bottom: 0px;
                 right: 0px;
                 height: 100vh;
+
+                &.none {
+                  display: none;
+                }
 
                 &.inactive {
                   animation: $slide-out;
@@ -150,6 +157,10 @@ nav {
                 height: 100vh;
                 position: absolute;
 
+                &.none {
+                  display: none;
+                }
+
                 &.inactive {
                   animation: $slide-out;
                 }
@@ -165,6 +176,10 @@ nav {
                 padding-bottom: 10px;
                 width: 100%;
                 text-align: center;
+
+                @include desktop {
+                  background-color: transparent;
+                }
 
                 &.icon-link {
                   display: flex;
@@ -395,22 +410,11 @@ nav {
   }
 }
 .about-me {
-  @include tablet {
-    flex-direction: column-reverse;
+  flex-direction: column-reverse;
 
-    .text {
-      padding-top: 20px;
-      text-align: center;
-    }
-  }
-
-  @include phone {
-    flex-direction: column-reverse;
-
-    .text {
-      padding-top: 20px;
-      text-align: center;
-    }
+  .text {
+    padding-top: 20px;
+    text-align: center;
   }
 }
 /* Try to get this working correctly */
