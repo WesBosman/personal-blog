@@ -248,6 +248,9 @@ nav {
 }
 .app-overlay {
   position: fixed;
+  // height: 0px;
+  // overflow: visible;
+  pointer-events: none;
   top: 0px;
   right: 0px;
   bottom: 0px;
@@ -338,8 +341,15 @@ nav {
       }
     }
   }
+  .slick-list {
+    // z-index: 4;
+  }
   .slick-dots {
+    display: block;
+    position: relative;
     background-color: $green;
+    padding-top: 20px;
+    padding-bottom: 20px;
     bottom: 0px;
   }
 }
@@ -356,6 +366,8 @@ nav {
   border: 2px solid $green;
 
   &.container-fluid {
+    height: 100%;
+    // z-index: 4;
     padding-left: 0px;
     padding-right: 0px;
   }
