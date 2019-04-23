@@ -248,8 +248,6 @@ nav {
 }
 .app-overlay {
   position: fixed;
-  // height: 0px;
-  // overflow: visible;
   pointer-events: none;
   top: 0px;
   right: 0px;
@@ -324,6 +322,7 @@ nav {
       &::before {
         font-size: 30px;
         color: $dark-green;
+
         @include phone {
           display: none;
         }
@@ -335,6 +334,7 @@ nav {
       &::before {
         font-size: 30px;
         color: $dark-green;
+
         @include phone {
           display: none;
         }
@@ -367,9 +367,22 @@ nav {
 
   &.container-fluid {
     height: 100%;
-    // z-index: 4;
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  .mobile-label {
+    @include desktop {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    @include phone {
+      display: block;
+    }
   }
 }
 .gallery-item-div {

@@ -32,6 +32,9 @@ export default function({ data }) {
       <Header />
       <Hero title="Gallery" />
       <Container className="gallery" fluid={true}>
+        <em className="mobile-label" style={{ "text-align": "center" }}>
+          Note: on mobile swipe left or right to move between gallery images.
+        </em>
         <Slider {...settings}>
           {galleryPhotos.map(function(element, index) {
             return (
