@@ -21,8 +21,13 @@ export default () => (
           enthusiast. A Surfer, Skateboarder and Snowboarder. I enjoy drinking
           beer and being outdoors.
           <br />
-          Feel free to email me
-          <a href="mailto:bosmanwn@vcu.edu">bosmanwn[at]vcu[dot]edu</a>
+          Feel free to email me <br />
+          <a
+            style={{ color: "rgba(41, 41, 41, 0.75)" }}
+            href="mailto:bosmanwn@vcu.edu"
+          >
+            bosmanwn[at]vcu[dot]edu
+          </a>
         </p>
         <br />
         <h2>The Tech</h2>
