@@ -20,6 +20,9 @@ export default () => (
           I am Wesley Bosman. I'm a professional Web Developer. A Python
           enthusiast. A Surfer, Skateboarder and Snowboarder. I enjoy drinking
           beer and being outdoors.
+          <br />
+          Feel free to email me
+          <a href="mailto:bosmanwn@vcu.edu">bosmanwn[at]vcu[dot]edu</a>
         </p>
         <br />
         <h2>The Tech</h2>
