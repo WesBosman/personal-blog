@@ -4,52 +4,30 @@ import Header from "../components/header"
 import Hero from "../components/hero"
 import Footer from "../components/footer"
 import Img from "gatsby-image"
-import Slider from "react-slick"
 import { Container } from "react-bootstrap"
 import { graphql } from "gatsby"
 
 export default function({ data }) {
-  const galleryPhotos = data.galleryPhotos.edges
-  const settings = {
-    customPaging: function(index) {
-      let img = galleryPhotos[index]
-      return (
-        <a href="#">
-          <Img key={index} sizes={img.node.childImageSharp.sizes} />
-        </a>
-      )
-    },
-    dots: true,
-    dotsClass: "slick-dots slick-thumb",
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    fade: true,
-  }
+  const galleryPhotos = data.galleryPhotos.edges;
+  
   return (
     <Layout>
       <Header />
       <Hero title="Gallery" />
       <Container className="gallery" fluid={true}>
-        <em className="mobile-label" style={{ "text-align": "center" }}>
-          Note: on mobile swipe left or right to move between gallery images.
-        </em>
-        <Slider {...settings}>
-          {galleryPhotos.map(function(element, index) {
-            return (
-              <div key={index} className="gallery-item-div">
-                <Img
-                  className="gallery-item"
-                  title="title"
-                  alt="alt"
-                  key={index}
-                  sizes={element.node.childImageSharp.sizes}
-                />
-              </div>
-            )
-          })}
-        </Slider>
+        {galleryPhotos.map(function(element, index) {
+          return (
+            <div key={index} className="gallery-item-div">
+              <Img
+                className="gallery-item"
+                title="title"
+                alt="alt"
+                key={index}
+                sizes={element.node.childImageSharp.sizes}
+              />
+            </div>
+          )
+        })}
       </Container>
       <Footer />
     </Layout>
@@ -60,7 +38,7 @@ export const galleryQuery = graphql`
   query {
     galleryPhotos: allFile(
       filter: {
-        extension: { regex: "/(jpeg|jpg|gif|png|JPG)/" }
+        extension: { regex: "/(jpe?g|gif|png)/" }
         relativeDirectory: { eq: "gallery" }
       }
     ) {
@@ -68,11 +46,11 @@ export const galleryQuery = graphql`
         node {
           childImageSharp {
             sizes(maxWidth: 300) {
-              ...GatsbyImageSharpSizes
+              ...GatsbyImageSharpSizes_withWebp
             }
           }
         }
       }
     }
   }
-`
+`;

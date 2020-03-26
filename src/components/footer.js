@@ -1,9 +1,14 @@
-import React from "react"
+import React, { Component } from "react"
 
-class Footer extends React.Component {
+class Footer extends Component {
   render() {
-    const date = new Date()
-    return <footer>Copyright© Wesley Bosman {date.getFullYear()}.</footer>
+    const date = new Date();
+
+    return (
+      <footer>
+        Copyright © Wesley Bosman {date.getFullYear()}.
+      </footer>
+    );
   }
 }
 

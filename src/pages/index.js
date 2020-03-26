@@ -13,10 +13,9 @@ export default function({ data }) {
       <Content
         class="r"
         title="Introductions"
-        text={`I'm Wes Bosman. I live in Richmond Virginia, \
-        but I'm originally Virginia's Eastern Shore. I spend most of my time \
-        developing websites at VSP Technologies. The purpose of this website \
-        is to display my art as well as blog about code that I write at work.`}
+        text={`I'm Wes Bosman.\
+        I'm a Web Developer from Virginia. The purpose of this website \
+        is to display my art as well as blog about code that I write.`}
         imageTitle="In the surf"
         imageAlt="In the surf"
         imageFluid={data.inTheSurf.childImageSharp.fluid}
@@ -36,31 +35,31 @@ export default function({ data }) {
 
 export const imgQuery = graphql`
   query {
-    inTheSurf: file(relativePath: { eq: "in-the-surf.JPG" }) {
+    inTheSurf: file(relativePath: { eq: "in-the-surf.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
-    beachBoard: file(relativePath: { eq: "beach-board.JPG" }) {
+    beachBoard: file(relativePath: { eq: "beach-board.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
-    sam: file(relativePath: { eq: "sam.PNG" }) {
+    sam: file(relativePath: { eq: "sam.png" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
-    mallards: file(relativePath: { eq: "mallards.JPG" }) {
+    mallards: file(relativePath: { eq: "mallards.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

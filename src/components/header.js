@@ -1,10 +1,10 @@
-import React from "react"
+import React, { Component } from "react"
 import FontAwesome from "react-fontawesome"
-import MenuIcon from "./menuicon"
+import MenuIcon from "./menu-icon"
 import { Motion, spring } from "react-motion"
 import TransitionLink from "gatsby-plugin-transition-link"
 
-class Header extends React.Component {
+class Header extends Component {
   constructor(props) {
     super(props)
 

@@ -1,14 +1,14 @@
-import React from "react"
+import React, { Component } from "react"
 import Img from "gatsby-image"
 import { StaticQuery, graphql } from "gatsby"
 
-class Avatar extends React.Component {
+class Avatar extends Component {
   render() {
     return (
       <StaticQuery
         query={graphql`
           query {
-            profileImg: file(relativePath: { eq: "avatar.JPG" }) {
+            profileImg: file(relativePath: { eq: "avatar.jpg" }) {
               childImageSharp {
                 fixed(width: 200, height: 200) {
                   ...GatsbyImageSharpFixed

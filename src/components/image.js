@@ -3,8 +3,6 @@ import Img from "gatsby-image"
 import { StaticQuery, graphql } from "gatsby"
 
 const Image = function({ data }) {
-  console.log("Props: ", props)
-  console.log("Data: ", data)
   return (
     <StaticQuery
       query={fluidImage}

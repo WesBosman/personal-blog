@@ -1,0 +1,47 @@
+.gallery {
+    max-width: $max-width;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    width: 100%;
+    height: 500px;
+    justify-content: center;
+    background-color: $light-gray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid $green;
+  
+    &.container-fluid {
+      height: 100%;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  
+    .mobile-label {
+      @include desktop {
+        display: none;
+      }
+  
+      @include tablet {
+        display: none;
+      }
+  
+      @include phone {
+        display: block;
+      }
+    }
+}
+
+.gallery-item-div {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+  
+    .gallery-item {
+      height: auto;
+      width: 300px;
+      max-height: 450px;
+      object-fit: fill;
+      object-position: center;
+    }
+}

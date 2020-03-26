@@ -8,7 +8,7 @@ class Hero extends React.Component {
       <StaticQuery
         query={graphql`
           query {
-            headerImg: file(relativePath: { eq: "richmond.JPG" }) {
+            headerImg: file(relativePath: { eq: "richmond.jpg" }) {
               childImageSharp {
                 fluid(maxWidth: 1250) {
                   ...GatsbyImageSharpFluid
