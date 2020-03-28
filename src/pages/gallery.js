@@ -5,6 +5,7 @@ import Hero from "../components/hero"
 import Footer from "../components/footer"
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 export default function({ data }) {
   const acrylic     = data.acrylic.edges;
@@ -35,12 +36,24 @@ export default function({ data }) {
       <Header />
       <Hero title="Gallery" />
       <div id="gallery-links" className="max-width margin-auto gallery-links flex justify-space-around">
-        <a href="#watercolor">Acrylic</a>
-        <a href="#charcoal">Charcoal</a>
-        <a href="#other">Other</a>
-        <a href="#pen">Pen</a>
-        <a href="#stencils">Stencil & Stickers</a>
-        <a href="#watercolor">Watercolor</a>
+        <AnchorLink to="/gallery#acrylic" title="Acrylic Paintings">
+          Acrylic
+        </AnchorLink>
+        <AnchorLink to="/gallery#charcoal" title="Charcoal Drawings">
+          Charcoal
+        </AnchorLink>
+        <AnchorLink to="/gallery#other" title="Other Works">
+          Other
+        </AnchorLink>
+        <AnchorLink to="/gallery#pen" title="Pen Drawings">
+          Pen
+        </AnchorLink>
+        <AnchorLink to="/gallery#stencils" title="Stencils and Stickers">
+          Stencil & Stickers
+        </AnchorLink>
+        <AnchorLink to="/gallery#watercolor" title="Watercolor Paintings">
+          Watercolor
+        </AnchorLink>
       </div>
       <div id="gallery-div" className="max-width gallery-div margin-auto flex column">
         <div>

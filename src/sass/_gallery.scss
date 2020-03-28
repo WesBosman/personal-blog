@@ -4,12 +4,16 @@
 #gallery-links {
   margin-top: 2em;
   padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 
   a {
     background-color: $theme-light-accent;
     color: $theme-dark;
     border-radius: 10px;
     padding: 0.5em;
+    margin: 0.25em;
 
     &:hover {
       background-color: $theme-dark;
@@ -21,6 +25,10 @@
   background-color: $theme-dark;
   padding: 1em;
   border-radius: 10px;
+
+  @include phone {
+    border-radius: 0px;
+  }
 
   h2 {
     color: $theme-light-accent;

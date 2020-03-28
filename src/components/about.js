@@ -6,16 +6,7 @@ import colors from "../constants/colors"
 
 const About = () => {
     return (
-        <div className="background-dark" style={{
-            padding: "1em",
-            maxWidth: "960px",
-            margin: "auto",
-            marginTop: "1em",
-            marginBottom: "1em",
-            borderRadius: "10px",
-            display: "grid",
-            gridTemplateColumns: "1fr 3fr"
-          }}>
+        <div className="background-dark about-me">
             <Avatar className="p-1"/>
             <div className="flex column">
               <h1 className="text-light" style={{
