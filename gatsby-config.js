@@ -31,8 +31,33 @@ module.exports = {
         name: "images",
       },
     },
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-transformer-sharp",
+    },
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-a11y-emoji"
+          },
+          {
+            resolve: "gatsby-remark-emojis",
+            options: {
+              class: "emoji-icon",
+              escapeCharacter: "#",
+              size: 32
+            }
+          }
+        ]
+      }
+    },
+    {
+      resolve: "gatsby-plugin-sharp",
+    },
+    {
+      resolve: "gatsby-plugin-scroll-reveal"
+    },
     {
       resolve: `gatsby-plugin-sass`,
       options: {

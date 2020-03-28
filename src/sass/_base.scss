@@ -1,0 +1,53 @@
+html {
+    font-family: $lato;
+    width: 100%;
+    height: 100%;
+  }
+  
+  body {
+    font-family: $lato;
+    min-width: 300px;
+    width: 100%;
+    height: 100%;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $theme-dark;
+  }
+  a {
+    text-decoration: none;
+    color: $theme-brand;
+    text-shadow: none;
+    background-image: none;
+
+    &.about-link {
+      color: $theme-light-accent;
+      opacity: 0.8;
+
+      &:hover {
+        color: $theme-light-accent;
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      color: $theme-light-accent;
+    }
+  }
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-align: center;
+    color: $theme-dark;
+    font-size: 1em;
+  }

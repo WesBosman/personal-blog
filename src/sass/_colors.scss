@@ -1,0 +1,32 @@
+// Text colors
+.color-light {
+    color: $theme-light;
+}
+.color-light-accent {
+    color: $theme-light-accent;
+}
+.color-brand {
+    color: $theme-brand;
+}
+.color-dark-accent{
+    color: $theme-dark-accent;
+}
+.color-dark {
+    color: $theme-dark;
+}
+// Background colors
+.background-light {
+    background-color: $theme-light;
+}
+.background-light-accent {
+    background-color: $theme-light-accent;
+}
+.background-brand {
+    background-color: $theme-brand;
+}
+.background-dark-accent {
+    background-color: $theme-dark-accent;
+}
+.background-dark {
+    background-color: $theme-dark;
+}

@@ -39,7 +39,6 @@ class Header extends Component {
               <div className={this.state.linksClass}>
                 <TransitionLink to={"/"}>Home</TransitionLink>
                 <TransitionLink to={"/gallery"}>Gallery</TransitionLink>
-                <TransitionLink to={"/about"}>About</TransitionLink>
                 <a href={"https://github.com/WesBosman"} className="icon-link">
                   <FontAwesome name="github" size="2x" />
                 </a>

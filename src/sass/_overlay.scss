@@ -1,0 +1,41 @@
+.app-overlay {
+    position: fixed;
+    pointer-events: none;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 3;
+    background-color: $dark-opacity;
+  
+    &.none {
+      background-color: transparent;
+    }
+  
+    &.active {
+      animation: $fade-out;
+    }
+  
+    &.inactive {
+      animation: $fade-in;
+    }
+  }
+  .overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 400px;
+    width: 100%;
+    min-width: 300px;
+    background-color: $theme-dark;
+    opacity: 0.25;
+    z-index: 2;
+  
+    @include tablet {
+      height: 300px;
+    }
+  
+    @include phone {
+      height: 250px;
+    }
+  }

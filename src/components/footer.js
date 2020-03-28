@@ -1,15 +1,14 @@
-import React, { Component } from "react"
+import React from "react"
 
-class Footer extends Component {
-  render() {
-    const date = new Date();
+const Footer = () => {
+  // Get the current date and use that to get the year for the footer
+  const date = new Date();
 
-    return (
-      <footer>
-        Copyright © Wesley Bosman {date.getFullYear()}.
-      </footer>
-    );
-  }
-}
+  return (
+    <footer>
+      Copyright © Wesley Bosman {date.getFullYear()}.
+    </footer>
+  );
+};
 
 export default Footer

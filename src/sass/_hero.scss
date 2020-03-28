@@ -1,0 +1,39 @@
+.hero {
+    &.gatsby-image-wrapper {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      height: 400px;
+      width: 100%;
+  
+      @include tablet {
+        height: 300px;
+      }
+  
+      @include phone {
+        height: 250px;
+      }
+    }
+  }
+  .hero-title {
+    position: absolute;
+    color: $theme-light-accent;
+    top: 0px;
+    height: 400px;
+    width: 100%;
+    min-width: 300px;
+    text-align: center;
+    font-size: 45px;
+    z-index: 2;
+    font-family: $rock-salt;
+    transform: translate(0%, 45%);
+    background-blend-mode: color-burn;
+  
+    @include tablet {
+      height: 300px;
+    }
+  
+    @include phone {
+      height: 250px;
+    }
+  }

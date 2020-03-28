@@ -3,7 +3,9 @@ import Layout from "../components/layout"
 import Header from "../components/header"
 import Hero from "../components/hero"
 import Content from "../components/content"
+import About from "../components/about"
 import Footer from "../components/footer"
+import Photographs from "../components/photographs";
 
 export default function({ data }) {
   return (
@@ -11,23 +13,36 @@ export default function({ data }) {
       <Header />
       <Hero title="" />
       <Content
-        class="r"
+        class="content-row"
         title="Introductions"
-        text={`I'm Wes Bosman.\
-        I'm a Web Developer from Virginia. The purpose of this website \
-        is to display my art as well as blog about code that I write.`}
         imageTitle="In the surf"
         imageAlt="In the surf"
         imageFluid={data.inTheSurf.childImageSharp.fluid}
-      />
+      >
+        <p>
+          I'm Wes Bosman.
+          I'm a Web Developer from Virginia.
+        </p>
+        <p>
+          The purpose of this website
+          is to display my art as well as blog about code that I write.
+        </p>
+      </Content>
       <Content
-        class="r-reverse"
+        class="content-row-reverse"
         title="Dog Friendly"
-        text="This is my dog Sam. She is a great saltwater adventure companion."
         imageTitle="Sam"
         imageAlt="Sam"
         imageFluid={data.sam.childImageSharp.fluid}
-      />
+      >
+        <p>
+          This is my dog Sam, always up for an adventure.
+        </p>
+      </Content>
+
+      <Photographs data={data.photographs.edges}/>
+      
+      <About/>
       <Footer />
     </Layout>
   )
@@ -63,5 +78,21 @@ export const imgQuery = graphql`
         }
       }
     }
+    photographs: allFile(
+      filter: {
+        extension: { regex: "/(jpe?g|gif|png)/" }
+        relativeDirectory: { eq: "photographs" }
+      }
+    ) {
+      edges {
+        node {
+          childImageSharp {
+            sizes(maxWidth: 300) {
+              ...GatsbyImageSharpSizes_withWebp
+            }
+          }
+        }
+      }
+    }
   }
-`
+`;
