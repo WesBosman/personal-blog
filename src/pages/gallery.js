@@ -120,7 +120,7 @@ export const galleryQuery = graphql`
     acrylic: allFile(
       filter: {
         extension: { regex: "/(jpe?g|gif|png)/" }
-        relativeDirectory: { eq: "acrylic" }
+        relativeDirectory: { eq: "./images/acrylic" }
       }
     ) {
       edges {
@@ -136,7 +136,7 @@ export const galleryQuery = graphql`
     charcoal: allFile(
       filter: {
         extension: { regex: "/(jpe?g|gif|png)/" }
-        relativeDirectory: { eq: "charcoal" }
+        relativeDirectory: { eq: "./images/charcoal" }
       }
     ) {
       edges {
@@ -152,7 +152,7 @@ export const galleryQuery = graphql`
     other: allFile(
       filter: {
         extension: { regex: "/(jpe?g|gif|png)/" }
-        relativeDirectory: { eq: "others" }
+        relativeDirectory: { eq: "./images/others" }
       }
     ) {
       edges {
@@ -168,7 +168,7 @@ export const galleryQuery = graphql`
     pen: allFile(
       filter: {
         extension: { regex: "/(jpe?g|gif|png)/" }
-        relativeDirectory: { eq: "pen" }
+        relativeDirectory: { eq: "./images/pen" }
       }
     ) {
       edges {
@@ -184,7 +184,7 @@ export const galleryQuery = graphql`
     stencils: allFile(
       filter: {
         extension: { regex: "/(jpe?g|gif|png)/" }
-        relativeDirectory: { eq: "stencils" }
+        relativeDirectory: { eq: "./images/stencils" }
       }
     ) {
       edges {
@@ -200,7 +200,7 @@ export const galleryQuery = graphql`
     watercolor: allFile(
       filter: {
         extension: { regex: "/(jpe?g|gif|png)/" }
-        relativeDirectory: { eq: "watercolor" }
+        relativeDirectory: { eq: "./images/watercolor" }
       }
     ) {
       edges {

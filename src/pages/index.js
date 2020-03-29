@@ -51,35 +51,35 @@ export default function({ data }) {
 
 export const imgQuery = graphql`
   query {
-    headerImg: file(relativePath: { eq: "images/richmond.jpg" }) {
+    headerImg: file(relativePath: { eq: "./images/richmond.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1250) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
-    inTheSurf: file(relativePath: { eq: "in-the-surf.jpg" }) {
+    inTheSurf: file(relativePath: { eq: "./images/in-the-surf.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 450) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
-    beachBoard: file(relativePath: { eq: "beach-board.jpg" }) {
+    beachBoard: file(relativePath: { eq: "./images/beach-board.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 450) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
-    sam: file(relativePath: { eq: "sam.png" }) {
+    sam: file(relativePath: { eq: "./images/sam.png" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
-    mallards: file(relativePath: { eq: "mallards.jpg" }) {
+    mallards: file(relativePath: { eq: "./images/mallards.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid_withWebp
@@ -89,7 +89,7 @@ export const imgQuery = graphql`
     photographs: allFile(
       filter: {
         extension: { regex: "/(jpe?g|gif|png)/" }
-        relativeDirectory: { eq: "photographs" }
+        relativeDirectory: { eq: "./images/photographs" }
       }
     ) {
       edges {
