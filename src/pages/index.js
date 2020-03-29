@@ -8,6 +8,7 @@ import Footer from "../components/footer"
 import Photographs from "../components/photographs";
 
 export default function({ data }) {
+  console.log("Data : ", data);
   return (
     <Layout>
       <Header />
@@ -50,7 +51,7 @@ export default function({ data }) {
 
 export const imgQuery = graphql`
   query {
-    headerImg: file(relativePath: { eq: "richmond.jpg" }) {
+    headerImg: file(relativePath: { eq: "images/richmond.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1250) {
           ...GatsbyImageSharpFluid_withWebp
