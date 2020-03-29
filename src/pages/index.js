@@ -11,7 +11,7 @@ export default function({ data }) {
   return (
     <Layout>
       <Header />
-      <Hero title="" />
+      <Hero title="" image={data.headerImg.childImageSharp.fluid}/>
       <Content
         class="content-row"
         title="Introductions"
@@ -50,6 +50,13 @@ export default function({ data }) {
 
 export const imgQuery = graphql`
   query {
+    headerImg: file(relativePath: { eq: "richmond.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1250) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
     inTheSurf: file(relativePath: { eq: "in-the-surf.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 450) {
