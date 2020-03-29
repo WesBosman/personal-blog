@@ -52,14 +52,14 @@ export const imgQuery = graphql`
   query {
     inTheSurf: file(relativePath: { eq: "in-the-surf.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 500) {
+        fluid(maxWidth: 450) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     beachBoard: file(relativePath: { eq: "beach-board.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 500) {
+        fluid(maxWidth: 450) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

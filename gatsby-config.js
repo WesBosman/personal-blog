@@ -19,6 +19,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Lato`
+          },
+          {
+            family: `Rock Salt`
+          }
+        ]
+      }
+    },
+    {
       resolve: `gatsby-plugin-anchor-links`
     },
     {
@@ -65,12 +78,6 @@ module.exports = {
       resolve: `gatsby-plugin-sass`,
       options: {
         implementation: require("node-sass"),
-      },
-    },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
       },
     },
     {

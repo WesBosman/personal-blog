@@ -1,8 +1,8 @@
-import React from "react"
+import React, { Component } from "react"
 import Img from "gatsby-image"
 import { StaticQuery, graphql } from "gatsby"
 
-class Hero extends React.Component {
+class Hero extends Component {
   render() {
     return (
       <StaticQuery
@@ -11,7 +11,7 @@ class Hero extends React.Component {
             headerImg: file(relativePath: { eq: "richmond.jpg" }) {
               childImageSharp {
                 fluid(maxWidth: 1250) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

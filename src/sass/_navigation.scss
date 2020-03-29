@@ -49,6 +49,7 @@ nav {
             display: flex;
             flex-direction: row;
             height: 100%;
+            padding-right: 1em;
   
             @include desktop {
               width: 50%;
