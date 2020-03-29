@@ -6,9 +6,9 @@ import Content from "../components/content"
 import About from "../components/about"
 import Footer from "../components/footer"
 import Photographs from "../components/photographs";
+import { graphql } from 'gatsby';
 
 export default function({ data }) {
-  console.log("Data : ", data);
   return (
     <Layout>
       <Header />
