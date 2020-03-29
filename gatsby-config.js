@@ -32,6 +32,12 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-netlify-cache`,
+      options: {
+        extraDirsToCache: []
+      }
+    },
+    {
       resolve: `gatsby-plugin-anchor-links`
     },
     {
